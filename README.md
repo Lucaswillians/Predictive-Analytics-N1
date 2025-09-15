@@ -1,8 +1,8 @@
 # Predictive-Analytics-N1
 
-# Alunos: Lucas Willian de Souza Serpa e Ryan Gabriel Bromati
+## Alunos: Lucas Willian de Souza Serpa e Ryan Gabriel Bromati
 
-## a) Conceitue e apresente exemplos dos tipos de análise de dados.
+### a) Conceitue e apresente exemplos dos tipos de análise de dados.
  Análise Descritiva: “O que aconteceu?”
 Exemplo: calcular médias de aceleração, velocidades máximas, pesos de todos os veículos; ver quantos veículos de determinado tipo, quantos têm tração específica. Ex: “a média de velocidade máxima para carros esportivos é X km/h”.
 
@@ -15,7 +15,7 @@ Exemplo: construir um modelo para prever a velocidade máxima de um veículo dad
 Análise Prescritiva: “O que deve ser feito?”
 Exemplo: sugerir ajustes nos atributos de handling (em termos de jogo) para melhorar veículos — por exemplo, se quiser um carro competitivo de corrida, que atributos ajustar (menos peso, mais tração, aceleração etc.). Ou, se fosse um jogo modificado, recomendar configurações de combo de atributos para diferentes tipos (corrida, rally, off-road) para otimizar desempenho.
 
-## b) Apresente um domínio de problema em que é requerido à AP (classificação ou predição); esse domínio 
+### b) Apresente um domínio de problema em que é requerido à AP (classificação ou predição); esse domínio 
 será utilizado na N3 (atividade integrada com a disciplina Ciência de Dados).
 Domínio: Jogos / Veículos de games — desempenho de veículos no ambiente do GTA San Andreas.
 
@@ -33,7 +33,7 @@ Essa classificação poderia ser feita com base num limiar de velocidade máxima
 
 Utilidade: para modders ou desenvolvedores de jogos que queiram balancear os veículos, para jogadores que queiram escolher veículos ótimos para corridas ou missões, para análises comparativas etc.
 
-## c) Justificar a escolha do(s) modelo(s) NoSQL/Relacional como possível(eis) repositório(s) de dados para o
+### c) Justificar a escolha do(s) modelo(s) NoSQL/Relacional como possível(eis) repositório(s) de dados para o
 domínio de problema (item b).
 Modelo Relacional (SQL):
 
