@@ -1,4 +1,4 @@
-# Predictive-Analytics-N1
+# Predictive Analytics N1
 
 ## Alunos: Lucas Willian de Souza Serpa e Ryan Gabriel Bromati
 
