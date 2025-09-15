@@ -2,59 +2,58 @@
 
 ## Alunos: Lucas Willian de Souza Serpa e Ryan Gabriel Bromati
 
-### a) Conceitue e apresente exemplos dos tipos de análise de dados.
- Análise Descritiva: “O que aconteceu?”
-Exemplo: calcular médias de aceleração, velocidades máximas, pesos de todos os veículos; ver quantos veículos de determinado tipo, quantos têm tração específica. Ex: “a média de velocidade máxima para carros esportivos é X km/h”.
+### Dataset utilizado
+**GTA San Andreas Vehicle Stats - Full Handling Data**  
+Link: [https://www.kaggle.com/datasets/marcelbiezunski/gta-san-andreas-vehicle-stats-full-handling-data](https://www.kaggle.com/datasets/marcelbiezunski/gta-san-andreas-vehicle-stats-full-handling-data)
 
-Análise Diagnóstica: “Por que aconteceu?”
-Exemplo: investigar por que determinados veículos têm desempenho pior — pode ser pelo peso elevado ou pela tração ruim ou baixa aceleração. Comparar atributos como aceleração vs peso para ver impactos.
+**Área de negócio**: Desenvolvimento e Design de Veículos para Games (GTA San Andreas Car Stats)  
+- A Rockstar busca ajudar designers a criar novos carros que se encaixem em categorias específicas, como sedã de luxo, esportivo ou off-road.  
+- O objetivo é identificar os atributos essenciais que definem o comportamento típico de cada categoria, garantindo que o novo veículo tenha a “receita” correta para seu tipo.
 
-Análise Preditiva: “O que pode acontecer?”
-Exemplo: construir um modelo para prever a velocidade máxima de um veículo dado atributos como peso, aceleração, torque, tipo de tração, etc. Ou, classificar se um veículo pertence à categoria “alto desempenho” ou “desempenho comum”.
+---
 
-Análise Prescritiva: “O que deve ser feito?”
-Exemplo: sugerir ajustes nos atributos de handling (em termos de jogo) para melhorar veículos — por exemplo, se quiser um carro competitivo de corrida, que atributos ajustar (menos peso, mais tração, aceleração etc.). Ou, se fosse um jogo modificado, recomendar configurações de combo de atributos para diferentes tipos (corrida, rally, off-road) para otimizar desempenho.
+### a) Conceitue e apresente exemplos dos tipos de análise de dados
 
-### b) Apresente um domínio de problema em que é requerido à AP (classificação ou predição); esse domínio 
-será utilizado na N3 (atividade integrada com a disciplina Ciência de Dados).
-Domínio: Jogos / Veículos de games — desempenho de veículos no ambiente do GTA San Andreas.
+**Análise Descritiva**:
+- Calcular médias de aceleração, velocidade máxima, peso e torque por categoria de veículo (sedã, esportivo, off-road) para entender padrões típicos.
 
-Problema de predição: Prever a velocidade máxima (ou outro atributo de desempenho, como aceleração) de um veículo com base em seus outros atributos do handling (peso, tração, freio, torque, aderência, etc.).
+**Análise Diagnóstica**:
+- Investigar por que determinados veículos apresentam desempenho inferior, analisando a relação entre peso, tração e aceleração.
 
-Ou problema de classificação: Classificar veículos em categorias de desempenho, por exemplo:
+**Análise Preditiva**:  
+- Construir um modelo para prever a categoria de um novo veículo ou sua velocidade máxima com base em atributos como peso, aceleração, torque e tração.
 
-“Alto desempenho”
+**Análise Prescritiva**: 
+- Sugerir ajustes nos atributos de handling para que um novo veículo se encaixe corretamente em uma categoria específica, otimizando desempenho e gameplay.
 
-“Médio desempenho”
+---
 
-“Baixo desempenho”
+### b) Domínio de problema (classificação ou predição)
 
-Essa classificação poderia ser feita com base num limiar de velocidade máxima ou aceleração.
+**Domínio**: Desenvolvimento e Design de Veículos em Games – GTA San Andreas.  
 
-Utilidade: para modders ou desenvolvedores de jogos que queiram balancear os veículos, para jogadores que queiram escolher veículos ótimos para corridas ou missões, para análises comparativas etc.
+**Problema de predição/classificação**:  
+- **Predição**: prever a velocidade máxima de um veículo com base nos atributos de handling (peso, aceleração, torque, tração, freio, aderência, etc.).  
+- **Classificação**: classificar veículos em categorias de desempenho, por exemplo:  
+  1. Alto desempenho  
+  2. Médio desempenho  
+  3. Baixo desempenho  
 
-### c) Justificar a escolha do(s) modelo(s) NoSQL/Relacional como possível(eis) repositório(s) de dados para o
-domínio de problema (item b).
-Modelo Relacional (SQL):
+**Utilidade**: auxilia designers e modders a criar veículos equilibrados e consistentes, permitindo decisões informadas sobre ajustes de atributos e garantindo experiência de gameplay adequada.
 
-Os dados do dataset são bastante estruturados: atributos numéricos claros (peso, aceleração, etc.), tipo de veículo, características de tração/freio, etc.
+---
 
-O modelo relacional facilita consultas complexas, junções, agregações, filtros como “todos os veículos com peso menor que X e aceleração maior que Y” — SQL é bom para isso.
+### c) Justificar a escolha do(s) modelo(s) NoSQL/Relacional como repositório(s) de dados
 
-Se quisermos manter versões históricas ou versões distintas (por exemplo, ajustes de handling ao longo do tempo), podemos ter tabelas normalizadas: veículos, atributos de handling, categorias, etc.
+**Modelo Relacional (SQL)**:  
+- Ideal para armazenar atributos estruturados, como peso, aceleração, torque, tração e categoria.  
+- Facilita consultas, agregações e filtragens, por exemplo: “todos os veículos esportivos com aceleração acima de X e peso menor que Y”.  
+- Permite normalizar tabelas: veículos, atributos de handling e categorias, garantindo consistência.
 
-Modelo NoSQL (Documentos, ex: MongoDB):
+**Modelo NoSQL (Documentos, ex.: MongoDB)**:  
+- Permite flexibilidade para armazenar atributos adicionais ou variáveis, como comentários de designers, logs de testes ou imagens de protótipos.  
+- Útil para dados semiestruturados e extensões futuras sem alterar o esquema principal.
 
-Caso você queira flexibilidade para adicionar atributos extras no futuro (por exemplo, atributos novos de modificação, atributos personalizados de modders), um modelo de documento permite que veículos tenham campos diferentes.
-
-Também útil se quiser guardar anotações livres ou comentários de usuários sobre veículos, logs de performance ou resultados de testes que não seguem esquema fixo.
-
-Se tiver, além dos números, imagens, metadados ricos ou dados semiestruturados é vantajoso.
-
-Possível combinação híbrida:
-
-Estruturar os atributos fixos via SQL para desempenho de consultas estruturadas e índices.
-
-Guardar dados variáveis ou extensões no NoSQL.
-
-Por exemplo, manter tabela relacional com características principais de cada veículo; usar MongoDB para armazenar coleções de logs de testes de desempenho, modificações customizadas, comparações de usuários, etc.
+**Combinação híbrida**:  
+- Usar SQL para os atributos estruturados principais e consultas rápidas.  
+- Usar NoSQL para dados variáveis, logs de testes, modificações personalizadas e anotações de designers.
